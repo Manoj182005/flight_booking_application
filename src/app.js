@@ -2,11 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser'; // Add this
-import authRoutes from './routes/authRoutes.js'; // Add this
+import cookieParser from 'cookie-parser';
+import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import flightRoutes from './routes/flightRoutes.js';
 import path from 'path';
+import bookingRoutes from './routes/bookingRoutes.js';
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ app.use(cookieParser());  // Logs requests to terminal
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/flights', flightRoutes);
-
+app.use('/api/bookings', bookingRoutes);
 
 
 const __dirname = path.resolve();
