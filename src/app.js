@@ -15,9 +15,9 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // Parses incoming JSON requests
+app.use(express.json()); 
 app.use(morgan('dev'));
-app.use(cookieParser());  // Logs requests to terminal
+app.use(cookieParser());  
 
 // Routes
 app.use('/api/auth', authRoutes);
