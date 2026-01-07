@@ -6,9 +6,9 @@ import upload from '../config/multer.js';
 const router = express.Router();
 
 router.route('/')
-    .get(getFlights) // Public
+    .get(getFlights) 
     .post(protect, admin, upload.single('image'), createFlight); // Admin only + image upload
 
-router.get('/:id', getFlightById); // Public
+router.get('/:id', getFlightById); 
 
 export default router;
