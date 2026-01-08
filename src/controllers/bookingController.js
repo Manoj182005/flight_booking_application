@@ -1,9 +1,7 @@
 import Booking from '../models/Booking.js';
 import Flight from '../models/Flight.js';
 
-// @desc    Create a new booking
-// @route   POST /api/bookings
-// @access  Private
+
 export const createBooking = async (req, res) => {
     const { flightId, passengers } = req.body;
 
