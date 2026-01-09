@@ -40,9 +40,6 @@ export const createBooking = async (req, res) => {
     }
 };
 
-// @desc    Get user bookings
-// @route   GET /api/bookings/mybookings
-// @access  Private
 export const getMyBookings = async (req, res) => {
     try {
         const bookings = await Booking.find({ user: req.user._id }).populate('flight');
@@ -52,9 +49,7 @@ export const getMyBookings = async (req, res) => {
     }
 };
 
-// @desc    Request booking cancellation
-// @route   PUT /api/bookings/:id/cancel-request
-// @access  Private
+
 export const requestCancellation = async (req, res) => {
     try {
         const booking = await Booking.findById(req.params.id);
