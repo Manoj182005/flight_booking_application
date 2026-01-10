@@ -5,7 +5,7 @@ import User from '../models/User.js';
 export const protect = async (req, res, next) => {
     let token;
 
-    // Read the JWT from the 'jwt' cookie
+   
     token = req.cookies.jwt;
 
     if (token) {
@@ -15,7 +15,7 @@ export const protect = async (req, res, next) => {
             // Get user from the token, excluding the password
             req.user = await User.findById(decoded.userId).select('-password');
 
-            next(); // Move to the next function (the controller)
+            next(); 
         } catch (error) {
             res.status(401).json({ message: 'Not authorized, token failed' });
         }
@@ -24,7 +24,7 @@ export const protect = async (req, res, next) => {
     }
 };
 
-// Admin middleware - User must be an admin
+//admin middleware
 export const admin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {
         next();
