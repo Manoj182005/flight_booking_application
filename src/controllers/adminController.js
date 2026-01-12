@@ -15,7 +15,7 @@ export const getAllBookings = async (req, res) => {
 // @desc    Update booking status / Finalize cancellation (Admin Only)
 // @route   PUT /api/admin/bookings/:id
 export const updateBookingStatus = async (req, res) => {
-    const { status } = req.body; // e.g., 'cancelled'
+    const { status } = req.body; 
 
     try {
         const booking = await Booking.findById(req.params.id).populate('flight');
