@@ -24,7 +24,7 @@ export const updateBookingStatus = async (req, res) => {
             return res.status(404).json({ message: 'Booking not found' });
         }
 
-        // If admin is cancelling the booking, return the seats to the flight
+        // If admin is cancelling the booking, return 
         if (status === 'cancelled' && booking.status !== 'cancelled') {
             const flight = await Flight.findById(booking.flight._id);
             if (flight) {
