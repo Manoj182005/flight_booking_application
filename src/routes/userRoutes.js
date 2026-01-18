@@ -4,7 +4,7 @@ import { protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Both routes are protected and require auth 
+
 router.route('/profile')
     .get(protect, getUserProfile)
     .put(protect, updateUserProfile);
