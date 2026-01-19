@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.route('/')
     .get(getFlights) 
-    .post(protect, admin, upload.single('image'), createFlight); // Admin only + image upload
+    .post(protect, admin, upload.single('image'), createFlight); 
 
 router.get('/:id', getFlightById); 
 
