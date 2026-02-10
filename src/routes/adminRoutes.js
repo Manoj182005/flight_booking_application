@@ -4,7 +4,7 @@ import { protect, admin } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Apply protect AND admin to all routes in this file
+
 router.use(protect);
 router.use(admin);
 
