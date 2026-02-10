@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(cookieParser());  
 
-// Routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/flights', flightRoutes);
@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Error Handling Middleware
+// Error Handling Middlewares
 app.use(notFound);
 app.use(errorHandler);
 
