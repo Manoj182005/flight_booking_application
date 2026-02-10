@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
         default: 'user' 
     },
     gender: { type: String, enum: ['male', 'female', 'other'] },
-    profilePicture: { type: String, default: '' }, // URL from Multer/Cloudinary
+    profilePicture: { type: String, default: '' }, 
 }, { timestamps: true });
 
 // Middleware to hash password before saving
