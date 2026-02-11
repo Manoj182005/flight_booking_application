@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Error Handling Middleware
+
 app.use(notFound);
 app.use(errorHandler);
 
