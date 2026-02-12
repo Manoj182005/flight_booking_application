@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     profilePicture: { type: String, default: '' }, 
 }, { timestamps: true });
 
-// Middleware to hash password before saving
+
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
     const salt = await bcrypt.genSalt(10);
