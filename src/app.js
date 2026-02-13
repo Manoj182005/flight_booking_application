@@ -33,7 +33,7 @@ const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 
-// Basic Route
+
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
